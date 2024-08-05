@@ -1,4 +1,8 @@
+
+type TimeType = number | string | Date;
+
 interface Calendar {
+	reset(time : TimeType) : void
 	getMilliseconds() : number
 	getSeconds() : number
 	getMinutes() : number
@@ -35,7 +39,6 @@ interface Calendar {
 	format(fmt : string) : string
 }
 
-type TimeType = number | string | Date;
 
 export function getInstance() : Calendar
 export function getInstance(time : TimeType) : Calendar

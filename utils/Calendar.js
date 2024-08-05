@@ -1,6 +1,9 @@
 class Calendar {
 	__time__ = null;
 	constructor(time){
+		this.reset(time);
+	}
+	reset(time) {
 		if(typeof time == "string"){
 			//new Date("")微信ios小程序 不支持yyyy-MM-ss格式时间处理。
 			this.__time__ = new Date(time.replace(/-/g, "/"));
