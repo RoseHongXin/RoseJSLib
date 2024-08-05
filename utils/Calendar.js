@@ -1,10 +1,16 @@
 class Calendar {
-	
 	__time__ = null;
 	constructor(time){
-		//new Date("")微信ios小程序 不支持yyyy-MM-ss格式时间处理。
-		if(time) { this.__time__ = new Date(time.replace(/-/g, "/")); 
-		}else{ this.__time__ = new Date(); }
+		if(typeof time == "string"){
+			//new Date("")微信ios小程序 不支持yyyy-MM-ss格式时间处理。
+			this.__time__ = new Date(time.replace(/-/g, "/"));
+		} else if(typeof time == "number"){
+			this.__time__ = new Date(Number(time));
+		} else if(typeof time == "date"){
+			this.__time__ = time;
+		} else {
+			this.__time__ = new Date();
+		}
 	}
 	getMilliseconds() { return this.__time__ ? this.__time__.getMilliseconds() : 0; }
 	getSeconds() { return this.__time__ ? this.__time__.getSeconds() : 0; }

@@ -35,5 +35,7 @@ interface Calendar {
 	format(fmt : string) : string
 }
 
+type TimeType = number | string | Date;
+
 export function getInstance() : Calendar
-export function getInstance(time : string) : Calendar
+export function getInstance(time : TimeType) : Calendar
