@@ -21,6 +21,7 @@ class Calendar {
 	getHours() { return this.__time__ ? this.__time__.getHours() : 0; }
 	getDate() { return this.__time__ ? this.__time__.getDate() : 0; }
 	getDay() { return this.__time__ ? this.__time__.getDay() : 0; }
+	getWeek() { return this.__time__ ? this.__time__.getWeek() : 0; }
 	getMonth() { return this.__time__ ? this.__time__.getMonth() : 0; }
 	getFullYear() { return this.__time__ ? this.__time__.getFullYear() : 0; }
 	getTime() { return this.__time__ ? this.__time__.getTime() : 0; }

@@ -9,6 +9,7 @@ interface Calendar {
 	getHours() : number
 	getDate() : number
 	getDay() : number
+	getWeek() : number
 	getMonth() : number
 	getFullYear() : number
 	getTime() : number
