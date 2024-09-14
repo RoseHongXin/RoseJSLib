@@ -19,7 +19,6 @@ class Calendar {
 	getSecond() { return this.__time__ ? this.__time__.getSeconds() : 0; }
 	getMinute() { return this.__time__ ? this.__time__.getMinutes() : 0; }
 	getHour() { return this.__time__ ? this.__time__.getHours() : 0; }
-	// getDate() { return this.__time__ ? this.__time__.getDate() : 0; }
 	getDay() { return this.__time__ ? this.__time__.getDate() : 0; }
 	getWeek() { return this.__time__ ? this.__time__.getDay() : -1; }
 	getMonth() { return this.__time__ ? this.__time__.getMonth() : 0; }
@@ -31,7 +30,6 @@ class Calendar {
 	setSecond(val) { this.__time__ ? this.__time__.setSeconds(val) : 0; }
 	setMinute(val) { this.__time__ ? this.__time__.setMinutes(val) : 0; }
 	setHour(val) { this.__time__ ? this.__time__.setHours(val) : 0; }
-	// setDate(val) { this.__time__ ? this.__time__.setDate(val) : 0; }
 	setDay(val) { this.__time__ ? this.__time__.setDate(val) : 0; }
 	setMonth(val) { this.__time__ ? this.__time__.setMonth(val) : 0; }
 	setFullYear(val) { this.__time__ ? this.__time__.setFullYear(val) : 0; }
@@ -49,25 +47,25 @@ class Calendar {
 		if(!this.__time__) { return; }
 		val = this.__cal(val+this.getMillisecond(), 1000);
 		if(val[0] != 0) { this.addSecond(val[0]); }
-		this.setMilliseconds(val[1]);
+		this.setMillisecond(val[1]);
 	}
 	addSecond(val) { 
 		if(!this.__time__) { return; }
 		val = this.__cal(val+this.getSecond(), 60);
 		if(val[0] != 0) { this.addMinute(val[0]); }
-		this.setSeconds(val[1]);
+		this.setSecond(val[1]);
 	}
 	addMinute(val) { 
 		if(!this.__time__) { return; }
 		val = this.__cal(val+this.getMinute(), 60);
 		if(val[0] != 0) { this.addHour(val[0]); }
-		this.setMinutes(val[1]);
+		this.setMinute(val[1]);
 	}
 	addHour(val) { 
 		if(!this.__time__) { return; }
 		val = this.__cal(val+this.getHour(), 24);
 		if(val[0] != 0) { this.addDay(val[0]); }
-		this.setHours(val[1]);
+		this.setHour(val[1]);
 	}
 	addDay(val) { 
 		if(!this.__time__) { return; }
