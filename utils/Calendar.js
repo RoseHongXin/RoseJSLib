@@ -15,11 +15,11 @@ class Calendar {
 			this.__time__ = new Date();
 		}
 	}
-	getMilliseconds() { return this.__time__ ? this.__time__.getMilliseconds() : 0; }
-	getSeconds() { return this.__time__ ? this.__time__.getSeconds() : 0; }
-	getMinutes() { return this.__time__ ? this.__time__.getMinutes() : 0; }
-	getHours() { return this.__time__ ? this.__time__.getHours() : 0; }
-	getDate() { return this.__time__ ? this.__time__.getDate() : 0; }
+	getMillisecond() { return this.__time__ ? this.__time__.getMilliseconds() : 0; }
+	getSecond() { return this.__time__ ? this.__time__.getSeconds() : 0; }
+	getMinute() { return this.__time__ ? this.__time__.getMinutes() : 0; }
+	getHour() { return this.__time__ ? this.__time__.getHours() : 0; }
+	// getDate() { return this.__time__ ? this.__time__.getDate() : 0; }
 	getDay() { return this.__time__ ? this.__time__.getDate() : 0; }
 	getWeek() { return this.__time__ ? this.__time__.getDay() : -1; }
 	getMonth() { return this.__time__ ? this.__time__.getMonth() : 0; }
@@ -27,12 +27,12 @@ class Calendar {
 	getTime() { return this.__time__ ? this.__time__.getTime() : 0; }
 	now() { return this.__time__ ? this.__time__.now() : 0; }
 	
-	setMilliseconds(val) { this.__time__ ? this.__time__.setMilliseconds(val) : 0; }
-	setSeconds(val) { this.__time__ ? this.__time__.setSeconds(val) : 0; }
-	setMinutes(val) { this.__time__ ? this.__time__.setMinutes(val) : 0; }
-	setHours(val) { this.__time__ ? this.__time__.setHours(val) : 0; }
-	setDate(val) { this.__time__ ? this.__time__.setDate(val) : 0; }
-	setDay(val) { this.__time__ ? this.__time__.setDay(val) : 0; }
+	setMillisecond(val) { this.__time__ ? this.__time__.setMilliseconds(val) : 0; }
+	setSecond(val) { this.__time__ ? this.__time__.setSeconds(val) : 0; }
+	setMinute(val) { this.__time__ ? this.__time__.setMinutes(val) : 0; }
+	setHour(val) { this.__time__ ? this.__time__.setHours(val) : 0; }
+	// setDate(val) { this.__time__ ? this.__time__.setDate(val) : 0; }
+	setDay(val) { this.__time__ ? this.__time__.setDate(val) : 0; }
 	setMonth(val) { this.__time__ ? this.__time__.setMonth(val) : 0; }
 	setFullYear(val) { this.__time__ ? this.__time__.setFullYear(val) : 0; }
 	setTime(val) { this.__time__ ? this.__time__.setTime(val) : 0; }
@@ -45,31 +45,31 @@ class Calendar {
 		return [multi, val];
 	}
 	
-	addMilliseconds(val) { 
+	addMillisecond(val) { 
 		if(!this.__time__) { return; }
 		val = this.__cal(val+this.getMilliseconds(), 1000);
 		if(val[0] != 0) { this.addSeconds(val[0]); }
 		this.setMilliseconds(val[1]);
 	}
-	addSeconds(val) { 
+	addSecond(val) { 
 		if(!this.__time__) { return; }
 		val = this.__cal(val+this.getSeconds(), 60);
 		if(val[0] != 0) { this.addMinutes(val[0]); }
 		this.setSeconds(val[1]);
 	}
-	addMinutes(val) { 
+	addMinute(val) { 
 		if(!this.__time__) { return; }
 		val = this.__cal(val+this.getMinutes(), 60);
 		if(val[0] != 0) { this.addHours(val[0]); }
 		this.setMinutes(val[1]);
 	}
-	addHours(val) { 
+	addHour(val) { 
 		if(!this.__time__) { return; }
 		val = this.__cal(val+this.getHours(), 24);
 		if(val[0] != 0) { this.addDate(val[0]); }
 		this.setHours(val[1]);
 	}
-	addDate(val) { 
+	addDay(val) { 
 		if(!this.__time__) { return; }
 		let thetime = this.getTime();	//从1970.1.1开始的毫秒数
 		thetime += (val * 24 * 3600000);

@@ -3,11 +3,10 @@ type TimeType = number | string | Date;
 
 interface Calendar {
 	reset(time : TimeType) : void
-	getMilliseconds() : number
-	getSeconds() : number
-	getMinutes() : number
-	getHours() : number
-	getDate() : number
+	getMillisecond() : number
+	getSecond() : number
+	getMinute() : number
+	getHour() : number
 	getDay() : number
 	getWeek() : number
 	getMonth() : number
@@ -15,22 +14,21 @@ interface Calendar {
 	getTime() : number
 	now() : number
 	
-	setMilliseconds(val : number) : void
-	setSeconds(val : number) : void
-	setMinutes(val : number) : void
-	setHours(val : number) : void
-	setDate(val : number) : void
+	setMillisecond(val : number) : void
+	setSecond(val : number) : void
+	setMinute(val : number) : void
+	setHour(val : number) : void
 	setDay(val : number) : void
 	setMonth(val : number) : void
 	setFullYear(val : number) : void
 	setTime(val : number) : void
 	parse(val : number) : void
 	
-	addMilliseconds(val : number) : void
-	addSeconds(val : number) : void
-	addMinutes(val : number) : void
-	addHours(val : number) : void
-	addDate(val : number) : void
+	addMillisecond(val : number) : void
+	addSecond(val : number) : void
+	addMinute(val : number) : void
+	addHour(val : number) : void
+	addDay(val : number) : void
 	addMonth(val : number) : void
 	addYear(val : number) : void
 	equal(calendar : Calendar) : boolean
