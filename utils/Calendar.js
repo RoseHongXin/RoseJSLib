@@ -47,26 +47,26 @@ class Calendar {
 	
 	addMillisecond(val) { 
 		if(!this.__time__) { return; }
-		val = this.__cal(val+this.getMilliseconds(), 1000);
-		if(val[0] != 0) { this.addSeconds(val[0]); }
+		val = this.__cal(val+this.getMillisecond(), 1000);
+		if(val[0] != 0) { this.addSecond(val[0]); }
 		this.setMilliseconds(val[1]);
 	}
 	addSecond(val) { 
 		if(!this.__time__) { return; }
-		val = this.__cal(val+this.getSeconds(), 60);
-		if(val[0] != 0) { this.addMinutes(val[0]); }
+		val = this.__cal(val+this.getSecond(), 60);
+		if(val[0] != 0) { this.addMinute(val[0]); }
 		this.setSeconds(val[1]);
 	}
 	addMinute(val) { 
 		if(!this.__time__) { return; }
-		val = this.__cal(val+this.getMinutes(), 60);
-		if(val[0] != 0) { this.addHours(val[0]); }
+		val = this.__cal(val+this.getMinute(), 60);
+		if(val[0] != 0) { this.addHour(val[0]); }
 		this.setMinutes(val[1]);
 	}
 	addHour(val) { 
 		if(!this.__time__) { return; }
-		val = this.__cal(val+this.getHours(), 24);
-		if(val[0] != 0) { this.addDate(val[0]); }
+		val = this.__cal(val+this.getHour(), 24);
+		if(val[0] != 0) { this.addDay(val[0]); }
 		this.setHours(val[1]);
 	}
 	addDay(val) { 
@@ -105,12 +105,12 @@ class Calendar {
 	format(fmt="yyyy-MM-dd") {
 		var o = {
 			"M+": this.getMonth() + 1, //月份
-			"d+": this.getDate(), //日
-			"h+": this.getHours(), //小时
-			"m+": this.getMinutes(), //分
-			"s+": this.getSeconds(), //秒
+			"d+": this.getDay(), //日
+			"h+": this.getHour(), //小时
+			"m+": this.getMinute(), //分
+			"s+": this.getSecond(), //秒
 			"q+": Math.floor((this.getMonth() + 3) / 3), //季度
-			"S": this.getMilliseconds() //毫秒
+			"S": this.getMillisecond() //毫秒
 		};
 		if (/(y+)/.test(fmt)){
 			fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
